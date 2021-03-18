@@ -9,9 +9,16 @@
         <link rel="stylesheet" href="./assets/css/style.css">
     </head>
     <body>
-        <div id="dateDisplay">
+        <div id="titleTime">
             <h1>Plan your day!</h1>
-            <h2>Today is <span id="todaysDate"></span></h2>
+            <h2>Today's date is <span id="dateDisplay"></span>. The current time is <span id="timeDisplay"></span>.</h2>
+        </div>
+        <div id ="hourlyPlanner">
+            <div id="hour9AM">
+                <h3>9:00AM</h3>
+                <input id="agenda9AM" type="text" class="hoverObject">
+                <button id="save9AM" onclick="saveTime('agenda9AM')"></button>
+            </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
         <script src="./assets/js/script.js" async defer></script>
