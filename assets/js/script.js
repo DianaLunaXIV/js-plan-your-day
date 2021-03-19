@@ -47,7 +47,7 @@ $(document).ready( function (){
     const $text5PM = $("#text5PM");
 
 
-    const dailyPlans = {9: $text9AM.val(), 10: $text10AM.val(), 11: $text11AM.val(), 12: $text12PM.val(), 1: $text1PM.val(), 2: $text2PM.val(), 3: $text3PM.val(), 4: $text4PM.val(), 5: $text5PM.val()};
+    const dailyPlans = {'9AM': "", '10AM': "", '11AM': "", '12PM': "", '1PM': "", '2PM': "", '3PM': "", '4PM': "", '5PM': ""};
 
 
 
@@ -55,17 +55,26 @@ $(document).ready( function (){
 
 
     function createKey() {
-        const key = moment().format('MM DD YYYY');
+        const key = moment().format('MM/DD/YYYY');
         return key;
     };
 
 
 
-    function saveTimes(){
-        localStorage.setItem(createKey(), dailyPlans)
+    function saveTimes(...args){
+        debugger;
+       Object.keys(dailyPlans).forEach(key => {
+           const $text = $(`#text${key}`);
+           dailyPlans[key] = $text.val();
+       })
+        // dailyPlans[9] = $text9AM.val();
+        // dailyPlans[10] = $text10AM.val();
+        // dailyPlans[11] = $text11AM.val();
+        // dailyPlans[12] = $text12PM.val();
+        localStorage.setItem(createKey(), JSON.stringify(dailyPlans));
     };
 
-    $('.saveBtn').click(saveTimes());
+    $('.saveBtn').click(saveTimes);
 
-
+    $('#text9AM').val()
 });
