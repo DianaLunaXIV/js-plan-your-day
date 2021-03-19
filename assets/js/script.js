@@ -1,6 +1,6 @@
 function loadTimes(){
     document.getElementById('timeDisplay').innerHTML = moment().format('h:mm:ss a');
-    document.getElementById('dateDisplay').innerHTML = moment().format('MMMM Do YYYY');
+    document.getElementById('dateDisplay').innerHTML = moment().format('dddd, MMMM Do YYYY');
 };
 const currentDate = setInterval(loadTimes, 1000);
 // document.getElementById('dateDisplay').innerHTML = currentDate.format('MMMM Do YYYY');
