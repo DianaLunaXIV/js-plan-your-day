@@ -17,10 +17,13 @@ textarea{
   text-align: center;
   background-color: transparent;
   background-image: url(https://images.freeimages.com/images/large-previews/184/office-1461951.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 2px 2px 2px black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-top: 10px solid #06AED5;
+  border-bottom: 10px solid #06AED5;
 }
 
 .description{
