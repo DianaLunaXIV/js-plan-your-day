@@ -16,7 +16,9 @@ textarea{
 .jumbotron {
   text-align: center;
   background-color: transparent;
-  color: black;
+  background-image: url(https://images.freeimages.com/images/large-previews/184/office-1461951.jpg);
+  color: white;
+  text-shadow: 1px 1px 2px black;
   border-radius: 0;
   border-bottom: 10px solid black;
 }
