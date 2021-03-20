@@ -69,7 +69,10 @@ $('.saveBtn').click(saveTimes);
 
 function loadFromStorage(...args){
 
-    const loadedPlans = JSON.parse(localStorage.getItem(moment().format('MM/DD/YYYY')));
+    let loadedPlans = JSON.parse(localStorage.getItem(moment().format('MM/DD/YYYY')));
+    if (loadedPlans == undefined) {
+        loadedPlans = dailyPlans;
+    };
     Object.keys(loadedPlans).forEach(key => {
         let $text = $(`#text${key}`);
         $text.val(loadedPlans[key]);
