@@ -62,7 +62,6 @@ $(document).ready( function (){
 
 
     function saveTimes(...args){
-        debugger;
        Object.keys(dailyPlans).forEach(key => {
            const $text = $(`#text${key}`);
            dailyPlans[key] = $text.val();
@@ -76,5 +75,13 @@ $(document).ready( function (){
 
     $('.saveBtn').click(saveTimes);
 
-    $('#text9AM').val()
+    function loadFromStorage(...args){
+
+        const loadedPlans = JSON.parse(localStorage.getItem(moment().format('MM/DD/YYYY')));
+        Object.keys(loadedPlans).forEach(key => {
+            let $text = $(`#text${key}`);
+            $text.val(loadedPlans[key]);
+        })
+    };
+    loadFromStorage();
 });
